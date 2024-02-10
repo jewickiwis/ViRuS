@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Greeting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #851515;
+            position: relative;
+            height: 100vh;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 72px;
+            color: #000000;
+        }
+
+        img {
+            width: 150px; /* Adjust the width to your preference */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #e60000;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 30px;
+        }
+
+        .button:hover,
+        #playButton:hover {
+            background-color: #b30000;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Adjust button size */
+    #redirectButton {
+        width: 200px; /* Adjust the width to your preference */
+        height: 50px; /* Adjust the height to your preference */
+        font-size: 20px; /* Adjust the font size to your preference */
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's Day Bali!</h1>
+        <img src="heart.png" alt="Heart">
+        <p>Wishing you a day filled with love and happiness.</p>
+        <a href="#" id="sendMessageButton" class="button">Send a Valentine's Card</a>
+        <button id="playButton" class="button">Play Music</button>
+        <audio id="backgroundMusic" loop>
+            <source src="IV OF SPADES - Captivated (Official Audio).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Modal popup -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Valentine's Card</h2>
+            <!-- Hi pretty baby Bali! Happy Valentine's Day po satin 💗 I love you so much. 
+            This is our first Valentine's Day together yeeeey I'm sorry for misunderstanding you po. 
+            Thank you dahil nag stay ka pa rin sakin. Love na love po kitaaaaa we'll be together forever okaaaaay -->
+            <br>
+            <center>
+            <button id="redirectButton" class="button">Click Me</button>
+        </center>
+            <!-- Your message form can go here -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('playButton').addEventListener('click', function() {
+            var audio = document.getElementById('backgroundMusic');
+            if (audio.paused) {
+                audio.play();
+                this.textContent = 'Pause Music';
+            } else {
+                audio.pause();
+                this.textContent = 'Play Music';
+            }
+        });
+
+        // Modal popup functionality
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("sendMessageButton");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+         // Redirect button functionality
+    document.getElementById('redirectButton').addEventListener('click', function() {
+        // Redirect to the desired website
+        window.location.href = 'https://jewickiwis.github.io/Flower/';
+    });
+
+    </script>
+</body>
+</html>
